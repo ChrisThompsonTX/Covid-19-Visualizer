@@ -4,6 +4,8 @@ import { MenuItem, FormControl, Select, Card } from '@material-ui/core';
 import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
+import LineGraph from './LineGraph';
+import { sortData } from './util';
 
 function App() {
   const [ countries, setCountries] = useState([]);
@@ -30,8 +32,10 @@ function App() {
               value: country.countryInfo.iso2
             }));
 
+
+            const sortedData = sortData(data);
             setCountries(countries);
-            setTableData(data);
+            setTableData(sortedData);
         })
     };
 
@@ -79,16 +83,14 @@ function App() {
           <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
         </div>
 
-        
-        
-        {/* Map */}
         <Map></Map>
+
       </div>
       <Card className="app__right">
         <h3>Live Cases by Country</h3>
         <Table countries={tableData} />
         <h3>WordlWide new cases</h3>
-        {/* graph */}
+        <LineGraph/>
       </Card>
     </div>
   );
