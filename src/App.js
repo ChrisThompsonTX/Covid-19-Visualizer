@@ -3,11 +3,13 @@ import './App.css';
 import { MenuItem, FormControl, Select, Card } from '@material-ui/core';
 import InfoBox from './InfoBox';
 import Map from './Map';
+import Table from './Table';
 
 function App() {
   const [ countries, setCountries] = useState([]);
   const [ country, setCountry] = useState(['worldwide']);
   const [ countryInfo, setCountryInfo] = useState({});
+  const [ tableData, setTableData] = useState([]);
 
   useEffect(() => {
     fetch('https://disease.sh/v3/covid-19/all')
@@ -29,6 +31,7 @@ function App() {
             }));
 
             setCountries(countries);
+            setTableData(data);
         })
     };
 
@@ -83,8 +86,8 @@ function App() {
       </div>
       <Card className="app__right">
         <h3>Live Cases by Country</h3>
+        <Table countries={tableData} />
         <h3>WordlWide new cases</h3>
-        {/* table */}
         {/* graph */}
       </Card>
     </div>
