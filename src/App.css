@@ -21,13 +21,13 @@ body {
 }
 
 .app {
-  
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
-.app__left {
-  
-}
-
-.app__right {
-
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
 }

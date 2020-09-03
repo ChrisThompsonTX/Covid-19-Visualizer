@@ -63,6 +63,8 @@ function App() {
         <Map></Map>
       </div>
       <Card className="app__right">
+        <h3>Live Cases by Country</h3>
+        <h3>WordlWide new cases</h3>
         {/* table */}
         {/* graph */}
       </Card>
