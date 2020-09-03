@@ -89,7 +89,7 @@ function App() {
       <Card className="app__right">
         <h3>Live Cases by Country</h3>
         <Table countries={tableData} />
-        <h3>WordlWide new cases</h3>
+        <h3>WorldWide new cases</h3>
         <LineGraph/>
       </Card>
     </div>
