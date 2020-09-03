@@ -23,6 +23,7 @@ const casesTypeColors = {
     },
 }
 
+export const prettyPrintStat = (stat) => stat ? `+${numeral(stat).format("0,0a")}` : "+0";
 
 export const sortData = (data) => {
     const sortedData = [...data];
