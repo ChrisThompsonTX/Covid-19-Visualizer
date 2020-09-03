@@ -64,4 +64,8 @@ body {
     flex-direction: column;
   }
 
+  .map {
+    margin-bottom: 20px;
+  }
+
 }
